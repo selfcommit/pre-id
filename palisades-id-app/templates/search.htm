@@ -81,7 +81,7 @@
             <td>{{pre_key.get().note}}</td>
             <td>{{pre_key.get().keystring[-4:]}}</td>
             <td>{{pre_key.get().date_added.strftime("%a %b %d, %Y - %H:%M:%S %z")}}</td>
-            <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailModal" data-email={{email}} data-details={{pre_key.get().keystring}} data-lastfour="{{pre_key.get().keystring[-4:]}}" >Details</button></td>
+            <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailModal" data-email={{email}} data-details="{{pre_key.get().keystring}}" data-lastfour="{{pre_key.get().keystring[-4:]}}" >Details</button></td>
             </tr>
             {% endfor %}
             </tbody>

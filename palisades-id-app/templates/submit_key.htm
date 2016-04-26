@@ -59,7 +59,7 @@
                 {% for pre_key in i.pre_keys %}
                     <tr id={{pre_key.urlsafe()}}>
                         <td>{{pre_key.get().note}}</td>
-                        <td>{{pre_key.get().keystring}}</td>
+                        <td>{{pre_key.get().keystring[-4:]}}</td>
                         <td>{{pre_key.get().date_added}}</td>
                         <td><button name="delete" class="btn btn-danger" id={{pre_key.urlsafe()}}>Delete</button></td>
                     </tr>
