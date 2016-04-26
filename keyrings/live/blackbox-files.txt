@@ -1,1 +1,2 @@
 palisades-id-app/creds.json
+palisades-id-app/settings.py
