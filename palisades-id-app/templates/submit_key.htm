@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+      <meta name="description" content="PRE ID Framework">
+    <meta name="author" content="Dan OBoyle">
+  <title>PRE Identity Framework</title>
+  <link rel="stylesheet" href="static/upload_key.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="//www.gstatic.com/authtoolkit/js/gitkit.js"></script>
+    <link type=text/css rel=stylesheet href="//www.gstatic.com/authtoolkit/css/gitkit.css" />
+    <script type=text/javascript>
+        window.google.identitytoolkit.signInButton(
+            '#navbar', // accepts any CSS selector
+            {
+                widgetUrl: "/widget",
+                signOutUrl: "/",
+            }
+        );
+    </script>
+</head>
+
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation" class="active"><a href="/public_key">Upload Key</a></li>
+            <li role="presentation"><a href="/search">Search</a></li>
+            <li id=navbar role="presentation"></a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><img width="50px" height="50px" src="static/crypto_icon_web.png">Palisades Identity Framework</h3>
+      </div>
+        <div class="container">
+            <h2> My Keys: </h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Details</th>
+                        <th>Ending in</th>
+                        <th>Created On</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for pre_key in i.pre_keys %}
+                    <tr id={{pre_key.urlsafe()}}>
+                        <td>{{pre_key.get().note}}</td>
+                        <td>{{pre_key.get().keystring}}</td>
+                        <td>{{pre_key.get().date_added}}</td>
+                        <td><button name="delete" class="btn btn-danger" id={{pre_key.urlsafe()}}>Delete</button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+  </div><!--My Keys -->
+<body class="body page-index clearfix">
+<form action=/public_key method=post>
+  <label class="_text-1">Description:</label>
+  <input name="note_text" required="True" class="_input" type="text">
+  <p class="text">Enter Public Key:</p>
+  <textarea required="True" name="key_text" class="_textarea"></textarea>
+  <button class="_button">Submit</button>
+</form>
+</body>
+<script type="text/javascript">
+    $('.btn-danger').on('click', function(e){
+        e.preventDefault();
+        $('#'+this.id).hide();
+        console.log(this);
+        $.ajax({
+            url: '/public_key?' + $.param({ "id": this.id }),
+            traditional: true,
+            type: 'DELETE'
+        });
+    });
+</script>
+</html>

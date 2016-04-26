@@ -1,0 +1,8 @@
+{
+  "clientId": "834087223792-pgbudr7q1rube2afo99ht55tsvpg08r1.apps.googleusercontent.com",
+  "projectId": "pre-id",
+  "serviceAccountEmail": "",
+  "serviceAccountPrivateKeyFile": "creds.json",
+  "widgetUrl": "http://localhost/widget",
+  "cookieName": "gtoken"
+}

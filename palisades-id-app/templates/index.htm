@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="PRE ID Framework">
+    <meta name="author" content="Dan OBoyle">
+
+    <title>PRE Identity Framework</title>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="//www.gstatic.com/authtoolkit/js/gitkit.js"></script>
+    <link type=text/css rel=stylesheet href="//www.gstatic.com/authtoolkit/css/gitkit.css" />
+    <script type=text/javascript>
+        window.google.identitytoolkit.signInButton(
+            '#navbar', // accepts any CSS selector
+            {
+                widgetUrl: "/widget",
+                signOutUrl: "/",
+            }
+        );
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/public_key">Upload Key</a></li>
+            <li role="presentation"><a href="/search">Search</a></li>
+            <li id=navbar role="presentation"></a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><img width="50px" height="50px" src="static/crypto_icon_web.png">Palisades Identity Framework</h3>
+      </div>
+
+      <div class="jumbotron">
+        <img src=static/crypto_logo_web.png>
+        <h3>What is Palisades-PRE Identity Framework?</h3>
+        <p class="lead">Palisades-PRE IDF stores keys and remembers who owns those keys.  This framework serves the same role as PGP Key servers, such as the <a href=https://pgp.mit.edu/ target=_blank>MIT PGP Public Key Server.</a></p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h4>Learn</h4>
+          <p>Palisades PRE is a lattice based encryption technology developed at NJIT.</p>
+
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Start your own</h4>
+          <p>PRE Framework is distributed.  Start your own on appengine today.</p>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>© 2016 <a href=https://www.njit.edu/>NJIT</a> Coursework.</p>
+      </footer>
+
+    </div> <!-- /container -->
+  
+
+</body></html>
